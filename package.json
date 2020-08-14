@@ -1,7 +1,7 @@
 {
-  "name": "express-prom-bundle",
-  "version": "1.1.3",
-  "description": "express middleware with popular prometheus metrics in one bundle",
+  "name": "express-prom-bundle-modified",
+  "version": "1.0.0",
+  "description": "modified express middleware with popular prometheus metrics in one bundle",
   "main": "src/index.js",
   "keywords": [
     "prometheus",
@@ -13,8 +13,8 @@
     "test": "node_modules/jasme/run.js"
   },
   "author": {
-    "name": "Konstantin Pogorelov",
-    "email": "or@pluseq.com"
+    "name": "diorhuang",
+    "email": "hehuang@cimpress.com.cn"
   },
   "license": "MIT",
   "dependencies": {
@@ -29,37 +29,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jochen-schweizer/express-prom-bundle.git"
+    "url": "git+https://github.com/henryhuangstar9/express-prom-bundle.git"
   },
-  "gitHead": "fefee43fbe721f3f8f6c9e587e5bb512bfd5bea5",
   "bugs": {
-    "url": "https://github.com/jochen-schweizer/express-prom-bundle/issues"
+    "url": "https://github.com/henryhuangstar9/express-prom-bundle/issues"
   },
-  "homepage": "https://github.com/jochen-schweizer/express-prom-bundle#readme",
-  "_id": "express-prom-bundle@1.1.3",
-  "_shasum": "5b9815d73f2779d56b2fc789613fb7ffc9796235",
-  "_from": "express-prom-bundle@1.1.3",
-  "_npmVersion": "3.3.12",
-  "_nodeVersion": "5.4.1",
-  "_npmUser": {
-    "name": "disjunction",
-    "email": "or@pluseq.com"
-  },
-  "dist": {
-    "shasum": "5b9815d73f2779d56b2fc789613fb7ffc9796235",
-    "tarball": "https://registry.npmjs.org/express-prom-bundle/-/express-prom-bundle-1.1.3.tgz"
-  },
-  "maintainers": [
-    {
-      "name": "disjunction",
-      "email": "or@pluseq.com"
-    }
-  ],
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/express-prom-bundle-1.1.3.tgz_1461919367087_0.34522750321775675"
-  },
+  "homepage": "https://github.com/henryhuangstar9/express-prom-bundle#readme",
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/express-prom-bundle/-/express-prom-bundle-1.1.3.tgz",
   "readme": "ERROR: No README data found!"
 }
