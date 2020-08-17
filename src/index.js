@@ -81,6 +81,17 @@ function main(opts) {
             metric.labelNames = ["method", "route", "status_code"];
             return metric;
         },
+        "http_request_long_duration": () => {
+            const metric = factory.newHistogram(
+                "http_request_long_duration",
+                "Long Duration of HTTP requests(Detailed)",
+                {
+                    buckets: [3, 5, 10]
+                }
+            );
+            metric.labelNames = ["method", "url", "status_code"];
+            return metric;
+        },
     };
 
     const
@@ -97,7 +108,7 @@ function main(opts) {
     }
 
     let middleware = function (req, res, next) {
-        let timer, labels, timer_duration, labels_duration;
+        let timer, labels, timer_duration, labels_duration, timer_long_duration, labels_long_duration;
 
         if (metrics["http_request_seconds"]) {
             labels = {"status_code": 0};
@@ -107,6 +118,11 @@ function main(opts) {
         if (metrics["http_request_detail_duration"]) {
             labels_duration = {"method": req.method, "route":req.url, "status_code": 0};
             timer_duration = metrics["http_request_detail_duration"].startTimer(labels_duration);
+        }
+
+        if (metrics["http_request_long_duration"]) {
+            labels_long_duration = {"method": req.method, "url":req.url, "status_code": 0};
+            timer_long_duration = metrics["http_request_long_duration"].startTimer(labels_long_duration);
         }
 
         if (req.path == "/metrics") {
@@ -128,9 +144,15 @@ function main(opts) {
                 if (res.statusCode) {
                     labels["status_code"] = res.statusCode;
                     timer();
-                    labels_duration["route"] = res.req.route.path;
+                    if (res.req && res.req.route) {
+                        labels_duration["route"] = res.req.route.path;
+                    }
                     labels_duration["status_code"] = res.statusCode;
                     timer_duration();
+                    if(res.req && res.req.route && res.req.route.path === '/api/v1/orders/marketplace/:marketplaceCode') {
+                        labels_long_duration["status_code"] = res.statusCode;
+                        timer_long_duration();
+                    }
                 }
             });
         }
