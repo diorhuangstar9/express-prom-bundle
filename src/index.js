@@ -86,7 +86,7 @@ function main(opts) {
                 "http_request_long_duration",
                 "Long Duration of HTTP requests(Detailed)",
                 {
-                    buckets: [3, 5, 10]
+                    buckets: [0.3, 1.5, 3, 5, 10]
                 }
             );
             metric.labelNames = ["method", "url", "status_code"];

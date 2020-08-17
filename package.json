@@ -1,6 +1,6 @@
 {
   "name": "express-prom-bundle-modified",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "modified express middleware with popular prometheus metrics in one bundle",
   "main": "src/index.js",
   "keywords": [
