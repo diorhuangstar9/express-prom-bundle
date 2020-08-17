@@ -149,7 +149,7 @@ function main(opts) {
                     }
                     labels_duration["status_code"] = res.statusCode;
                     timer_duration();
-                    if(res.req && res.req.route && res.req.route.path === '/api/v1/orders/marketplace/:marketplaceCode') {
+                    if(opts.routes_to_detail && res.req && res.req.route && opts.routes_to_detail.indexOf(res.req.route.path) !== -1) {
                         labels_long_duration["status_code"] = res.statusCode;
                         timer_long_duration();
                     }
