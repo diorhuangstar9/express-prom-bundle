@@ -64,7 +64,7 @@ function main(opts) {
                 "http_request_seconds",
                 "number of http responses labeled with status code",
                 {
-                    buckets: [0.003, 0.03, 0.1, 0.3, 1.5, 10]
+                    buckets: [0.03, 0.1, 0.5, 1.5, 3, 5, 10]
                 }
             );
             metric.labelNames = ["status_code"];
@@ -75,7 +75,7 @@ function main(opts) {
                 "http_request_detail_duration",
                 "Duration of HTTP requests(Detailed)",
                 {
-                    buckets: [0.003, 0.03, 0.1, 0.3, 1.5, 10]
+                    buckets: [0.03, 0.1, 0.5, 1.5, 3, 5, 10]
                 }
             );
             metric.labelNames = ["method", "route", "status_code"];
